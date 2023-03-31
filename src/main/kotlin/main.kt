@@ -16,13 +16,13 @@ fun agoToText(totalTime: Int) = when (totalTime) {
 fun changeTimeMin(totalTime: Int) = when {
     (totalTime / 60) == 11 -> "${totalTime / 60} минут"
     (totalTime / 60) % 10 == 1 -> "${totalTime / 60} минуту"
-    (totalTime / 60) % 10 == 2 || (totalTime / 60) % 10 == 3 || (totalTime / 60) % 10 == 4 -> "${totalTime / 60} минуты"
+    (totalTime / 60) % 10 in 2..4 -> "${totalTime / 60} минуты"
     else -> "${totalTime / 60} минут"
 }
 
 fun changeTimeHour(totalTime: Int) = when {
     (totalTime / 3600) == 11 -> "${totalTime / 3600} часов"
     (totalTime / 3600) % 10 == 1 -> "${totalTime / 3600} час"
-    (totalTime / 3600) % 10 == 2 || (totalTime / 3600) % 10 == 3 || (totalTime / 3600) % 10 == 4 -> "${totalTime / 3600} часа"
+    (totalTime / 3600) % 10 in 2..4 -> "${totalTime / 3600} часа"
     else -> "${totalTime / 3600} часов"
 }
